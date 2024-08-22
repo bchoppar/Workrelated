@@ -1,6 +1,18 @@
 import { Component, computed, Input, input, Output, output, EventEmitter } from '@angular/core';
 // import { DUMMY_USERS } from '../app/dummy-users';
 
+// type User = {
+//     id: string;
+//     name: string;
+//     avatar: string
+// }
+//two types we can use either type or interface
+interface User {
+    id: string;
+    name: string;
+    avatar: string
+}
+
 // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
 @Component({
   selector: 'app-user',
@@ -25,11 +37,7 @@ export class UserComponent {
 // @Input({ required: true }) avatar!: string;
 // @Input({ required: true }) name!: string;
 @Output() select = new EventEmitter()
-   @Input({required: true}) user!: {
-    id: string;
-    name: string;
-    avatar: string
-   }
+   @Input({required: true}) user!: User
 // select = output<string>();
 //Signals method : 
 //  avatar = input.required<string>();
